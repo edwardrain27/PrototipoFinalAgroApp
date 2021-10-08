@@ -7,7 +7,7 @@ class InsumosControllers {
         listar = async(req=request , res=response)=> {
 
             const insumos = await pool.query('SELECT * FROM insumos')
-            res.json(insumos);
+            res.json({insumos});
 
         }
 

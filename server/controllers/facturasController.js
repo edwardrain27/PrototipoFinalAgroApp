@@ -6,7 +6,7 @@ class FacturasControllers {
     listar = async (req=request, res=response) => {
 
         const insumos = await pool.query('SELECT * FROM facturas');
-        res.json(insumos);
+        res.json({insumos});
 
     }
 

@@ -5,7 +5,7 @@ class ClientesControllers {
     listar=async (req=request , res=response)=> {
 
         const insumos = await pool.query('SELECT * FROM clientes')
-        res.json(insumos);
+        res.json({insumos});
 
     }
 

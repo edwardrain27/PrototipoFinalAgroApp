@@ -11,7 +11,7 @@ class MantenimientoControllers {
         console.log(mantenimiento)
 
         
-        res.json(mantenimiento)
+        res.json({mantenimiento})
         
     }
 

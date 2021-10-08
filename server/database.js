@@ -5,6 +5,7 @@ const {promisify} = require('util');
 const pool = mysql.createPool(database)
 //Aqui inicio la conexion
 pool.getConnection((err, connection)=> {
+    
     if(err){
         if(err.code ===' PROTOCOL_CONNECTION_LOST'){
             console.error('DATABASE CONNECTION WAS CLOSED');

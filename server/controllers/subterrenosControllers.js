@@ -6,9 +6,8 @@ const {request , response} = require('express');
     listar = async (req=request , res=response )=>{
         const terreno = await pool.query('SELECT * FROM subterreno')
         console.log(req.body)
-        res.json(terreno)
-        
-        res.json('Subterreno listado')
+        res.json({terreno});
+    
         
     }
 

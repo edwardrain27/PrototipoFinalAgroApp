@@ -8,7 +8,7 @@ class MantenimientoMNsubteControlers {
         console.log(mantenimiento)
 
         
-        res.json(mantenimiento)
+        res.json({mantenimiento});
     }
 
     crear = async (req = request , res=response)=>{

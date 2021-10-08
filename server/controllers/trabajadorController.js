@@ -7,7 +7,7 @@ class TrabajadorControllers {
 
     listar = async(req = request , res = response )=>{
         const traba = await pool.query('SELECT * FROM trabajador')
-        res.json(traba)
+        res.json({traba})
                 
     }
 

@@ -6,7 +6,7 @@ class TipoCultivoControllers {
     listar = async(req=request , res=response)=> {
 
         const tcultivos = await pool.query('SELECT * FROM tipo_cultivos')
-        res.json(tcultivos);
+        res.json({tcultivos});
 
     }
 

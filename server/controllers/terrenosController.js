@@ -8,7 +8,7 @@ class TerrenosControllers {
         console.log(req.body)
 
         
-        res.json(terreno)
+        res.json({terreno})
         
     }
 

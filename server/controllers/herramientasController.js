@@ -8,7 +8,7 @@ class HerramientasControllers {
     listar = async(req=request , res=response)=> {
 
         const herramienta = await pool.query('SELECT * FROM herramientas')
-        res.json(herramienta);
+        res.json({herramienta});
     }
 
     listarUno = async(req=request , res=response)=>{
