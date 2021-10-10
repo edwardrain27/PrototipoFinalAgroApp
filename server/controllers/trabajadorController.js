@@ -12,6 +12,9 @@ class TrabajadorControllers {
     }
 
     crear = async(req=request , res=response)=>{
+
+        const {trabajadorId  , t_nombre} = req.body
+        console.log(trabajadorId)
         await pool.query('INSERT INTO trabajador set ?' , [req.body]);
         res.json({message: 'Trabajador agregado'})
         console.log(req.body)
