@@ -1,6 +1,7 @@
 
 const pool = require('../database');
 const {request , response} = require('express');
+const {reporteSubterrenos, reporteDimanico} = require('../services/subterrenoService');
  class SubterrenosControllers {
 
     listar = async (req=request , res=response )=>{
@@ -8,8 +9,17 @@ const {request , response} = require('express');
         console.log(req.body)
         res.json({terreno});
     
-        
     }
+
+    getReporte = async(req, res) =>{
+
+        const consulta = await reporteDinamico({estado:"Ocupado"});
+        console.log(consulta);
+        res.json(consulta);
+    }
+
+
+    
 
     crear= async(req=request , res=response)=>{
         await pool.query('INSERT INTO subterreno set ?' , [req.body]);

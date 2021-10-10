@@ -12,6 +12,7 @@ class SubterrenoRoutes {
     config(){
 
         this.router.post('/' ,  subterrenoControllers.crear);
+        this.router.get('/report',subterrenoControllers.getReporte);
         this.router.get('/', subterrenoControllers.listar);
         this.router.get('/:id', subterrenoControllers.listarUno);
         this.router.put('/:id', subterrenoControllers.editar);
