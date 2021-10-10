@@ -2,7 +2,7 @@
 const pool = require('../database');
 const {request , response} = require('express');
 const {reporteSubterrenos, reporteDimanico} = require('../services/subterrenoService');
-const {validarRegistros }= require('../services/validarRegistros');
+const {validarRegistros }= require('../services/servicioVerificarExistente');
  class SubterrenosControllers {
 
     listar = async (req=request , res=response )=>{
@@ -26,7 +26,7 @@ const {validarRegistros }= require('../services/validarRegistros');
         try{
             
             //retorna un then o catch
-            await validarRegistros('subterreno','sub_area',sub_area);
+            await servicioVerificarExistente('subterreno','sub_area',sub_area);
             await pool.query('INSERT INTO subterreno set ?' , [req.body]);
             res.json({message: 'Suberreno agregado'})
             console.log(req.body)

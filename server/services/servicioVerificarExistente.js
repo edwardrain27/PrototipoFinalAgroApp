@@ -15,7 +15,7 @@ const validarRegistros = async(tabla, campo, valor)=>{
     return new Promise((resolve, reject)=>{
         if(consulta > 0)
         {
-            reject({msg:'Ya existe el registro'});
+            reject({msg:'Ya existe ese nombre'});
         }
         resolve();
 
