@@ -11,9 +11,14 @@ class cultivoSubterrenosRoute {
     config(){
 
         this.router.post('/',[
-            check('fk_tipo_cultivos',"Por favor, digite una referencia de tipo cultivo").not().isEmpty(),
-            check('fk_subterreno',"Por favor, seleccione un subterreno").not().isEmpty(),
-            check('fecha',"Por favor, digite una fecha válida").isDate(),
+            check('fk_tipo_cultivos',"Por favor, digite una referencia de tipo cultivo")
+            .not()
+            .isEmpty(),
+            check('fk_subterreno',"Por favor, seleccione un subterreno")
+            .not()
+            .isEmpty(),
+            check('fecha',"Por favor, digite una fecha válida")
+            .isDate(),
             validarCampos
         ], cultivoSubterrenoControllers.crear);
         this.router.get('/', cultivoSubterrenoControllers.listar);

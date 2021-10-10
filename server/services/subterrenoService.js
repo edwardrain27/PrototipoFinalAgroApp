@@ -29,12 +29,13 @@ reporteSubterrenos = async({area, estado, id_terreno})=>{
 reporteDinamico = async({estado})=>{
 
  
-    let query = "SELECT t.te_nombre as nombre, t.te_ubicacion as ubicacion, s.sub_area as area, s.sub_estado as estado FROM terrenos as t INNER JOIN subterreno as s on s.fk_terrenos_idterrenos = t.idterrenos; "
- /*    query+=" \nFROM terrenos as t"
-    query+=" \nINNER JOIN subterreno as s on s.fk_terrenos_idterrenos = t.idterrenos;";
-     */
+    let query = "SELECT t.te_nombre as nombre, t.te_ubicacion as ubicacion, s.sub_area as area, s.sub_estado as estado"
+    query+=" \nFROM terrenos as t"
+    query+=" \nINNER JOIN subterreno as s on s.fk_terrenos_idterrenos = t.idterrenos";
+     
     console.log(query);
-    await pool.query(query);
+
+    return await pool.query(query);
 
 
 }
