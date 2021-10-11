@@ -4,6 +4,7 @@ const {validarCampos }= require('../middlewares/validar.campos');
 const mantenimientoMNsubteControlers = require('../controllers/manteNNsubterrController');
 
 
+
 class MantenimientoMNsubteRoute {
     constructor (){
         this.router= Router()
@@ -27,6 +28,8 @@ class MantenimientoMNsubteRoute {
 
             validarCampos
         ], mantenimientoMNsubteControlers.crear);
+
+        this.router.get('/reporte' , mantenimientoMNsubteControlers.getReporte);
         this.router.get('/', mantenimientoMNsubteControlers.listar);
         this.router.get('/:id', mantenimientoMNsubteControlers.listarUno);
         this.router.put('/:id', [

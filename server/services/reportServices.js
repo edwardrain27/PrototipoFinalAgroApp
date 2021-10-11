@@ -1,7 +1,7 @@
 
 const pool = require('../database');
-const {escape} = require('mysql');
-const { is } = require('bluebird');
+//const {escape} = require('mysql');
+//const { is } = require('bluebird');
 
 
 reporteTrabajadores = async({area,estado})=>{
@@ -19,6 +19,7 @@ reporteTrabajadores = async({area,estado})=>{
 
     return await pool.query(query);
 }
+
 
 module.exports = {
     reporteTrabajadores

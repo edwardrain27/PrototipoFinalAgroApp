@@ -26,7 +26,7 @@ const {validarRegistros }= require('../services/servicioVerificarExistente');
         try{
             
             //retorna un then o catch
-            await servicioVerificarExistente('subterreno','sub_area',sub_area);
+            //await servicioVerificarExistente('subterreno','sub_area',sub_area);
             await pool.query('INSERT INTO subterreno set ?' , [req.body]);
             res.json({message: 'Suberreno agregado'})
             console.log(req.body)

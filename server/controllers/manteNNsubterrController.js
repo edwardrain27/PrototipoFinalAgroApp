@@ -1,5 +1,6 @@
 const pool =require("../database");
 const { request , response } = require('express');
+const {reporteConsultaPrincipal} = require('../services/servicioreporte')
 
 class MantenimientoMNsubteControlers {
     
@@ -42,6 +43,14 @@ class MantenimientoMNsubteControlers {
         await pool.query('DELETE FROM mantenimentos_has_subterreno WHERE iD_mantenimentos_subterrenocol = ?' , [id]);
         res.json({text: `mantenimentos mn  eliminado ${req.params.id}`});
         
+
+    }
+
+    getReporte = async(req=request , res=response) => {
+        const consulta = await reporteConsultaPrincipal();
+        console.log(consulta);
+        res.json(consulta);
+
 
     }
 
